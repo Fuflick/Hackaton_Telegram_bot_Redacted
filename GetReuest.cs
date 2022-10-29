@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -8,12 +8,12 @@ using System.IO;
 
 namespace Hakaton_bot
 {
-    public class GetReuest
+    public class GetRequest
     {
         HttpWebRequest _request;
         string _link;
         public string Response { get; set; }
-        public GetReuest(string link)
+        public GetRequest(string link)
         {
             this._link = link;
         }
@@ -26,12 +26,13 @@ namespace Hakaton_bot
                 HttpWebResponse response = (HttpWebResponse)_request.GetResponse();
                 var sream = response.GetResponseStream();
                 if (sream != null) Response = new StreamReader(sream).ReadToEnd();
+                Console.WriteLine(Response);
             }
             catch (Exception)
             { 
-                throw;
             }
             
         }
     }
 }
+
