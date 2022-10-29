@@ -227,7 +227,8 @@ namespace Hakaton_bot
             while (true)
             {
                 var href = "https://api.telegram.org/bot5468597499:AAGdw8X_2mC533zR4c3uicU7FaV7bXtw_yQ/sendMessage?chat_id=message.Chat.Id&text=Отслеживаемый%20курс%20обновлён";
-                var request = new GetReuest(href);
+                var request = new GetRequest(href);
+                request.Run();
                 
             }
         }
